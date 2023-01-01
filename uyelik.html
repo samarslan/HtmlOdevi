@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Türkiye</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">Linux Türkiye</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./haberler.html">Haberler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./etkinlikler.html">Etkinlikler</a></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./bildirgeler.html">Bildirgeler</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Hakkımızda
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./hakkimizda.html">Hakkımızda</a></li>
+                            <li><a class="dropdown-item" href="./tarihce.html">Tarihçe</a></li>
+                            <li><a class="dropdown-item" href="./ilkeler.html">İlkelerimiz</a></li>
+                            <li><a class="dropdown-item" href="./kurumsal.html">Kurumsal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./uyelik.html">Üyelik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./iletisim.html">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./indir.html">İndir</a></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Kayıt Ol</h1>
+    <form>
+        <div class="form-group">
+            <label for="inputFirstname">İsim</label>
+            <input type="text" class="form-control" id="inputFirstname" placeholder="İsminiz">
+            <small id="name" class="form-text text-muted">Adınızı girin.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputLastname">Soyisim</label>
+            <input type="text" class="form-control" id="inputLastname" placeholder="Soyadınız">
+            <small id="lastname" class="form-text text-muted">Soyadınızı girin.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">E-Posta Adresi</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="E-Posta Adresinizi Girinl">
+            <small id="emailHelp" class="form-text text-muted">E-Postanızı kimseyle paylaşmayız.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Şifre</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Şifre">
+        </div>
+        <div class="form-group">
+            <label for="inputConfirmPassword">Şifreyi Onayla</label>
+            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Şifreyi Onayla">
+        </div>
+        <button id="myButton" type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </form>
+</div>
+<script>
+    const button = document.getElementById('myButton');
+
+    button.onclick=function () {
+        var isim= document.getElementById('inputFirstname');
+        var soyisim= document.getElementById('inputLastname');
+        var sifre= document.getElementById('inputPassword');
+        var sifreonay= document.getElementById('inputConfirmPassword');
+        var randomNumber = Math.random();
+        var randomInteger = Math.floor(randomNumber * 100000000);
+        var randomString = randomInteger.toString();
+        if(sifre.value!=sifreonay.value){
+            alert("Şifreler Uyuşmuyor");
+        }else{
+            alert("Sevigili "+isim.value+" "+soyisim.value+" Kayıt Başarılı\nÜyelik Numaranız: "+randomString);
+        }
+    }
+</script>
+</body>
+</html>
